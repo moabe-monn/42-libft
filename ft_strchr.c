@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabe < moabe@student.42tokyo.jp>          +#+  +:+       +#+        */
+/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 08:37:08 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/28 08:37:08 by moabe            ###   ########.fr       */
+/*   Created: 2025/04/29 16:50:25 by moabe             #+#    #+#             */
+/*   Updated: 2025/04/29 16:50:25 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-char *ft_strchr(const char *s, int c) {
-    while (*s) {
-        if (*s == c) 
-            return ((char *)s);
-        s++;
-    }
-    if (c == '\0') 
-        return ((char *)s);
-    return (NULL);
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
-
 
 // int main(void)
 // {
@@ -41,5 +43,5 @@ char *ft_strchr(const char *s, int c) {
 // 	printf("検索文字が見つかった場所から表示→%s\n",r);
 //     s = ft_strchr(test,'t');
 //     printf("検索文字が見つかった場所から表示→%s\n",s);
-// 	return 0;
+// 	return (0);
 // }
