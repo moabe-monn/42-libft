@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moabe < moabe@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 07:20:21 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/29 07:20:21 by moabe            ###   ########.fr       */
+/*   Created: 2025/04/29 09:14:14 by moabe             #+#    #+#             */
+/*   Updated: 2025/04/29 09:14:14 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+char *ft_strtrim(char const *s1, char const *set) {
+    int strlength, i;
 
-void *ft_calloc(size_t nmemb, size_t size) {
-    void    *p;
-    size_t  mul;
-
-    mul = nmemb * size;
-    p = malloc(mul);
-    if (!p) {
+    if (!s1 || !set)
         return (NULL);
-    } 
-    ft_bzero(p,mul); //動作確認
-    return(p);
+    
+
+    
 }
