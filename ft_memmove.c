@@ -6,7 +6,7 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:16:00 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/29 18:04:31 by moabe            ###   ########.fr       */
+/*   Updated: 2025/04/29 18:33:16 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t count)
 {
-	unsigned char		*d_cpy;
-	const unsigned char	*s_cpy;
-	unsigned char		*tmp_cpy;
-	size_t				i;
+	int					i;
 
-	d_cpy = (unsigned char *)dest;
-	s_cpy = (const unsigned char *)src;
-	tmp_cpy = (unsigned char *)ft_bzero((void *)tmp_cpy, count);
-	i = 0;
-	while (i < count)
+	if (!dest || !src)
+		return (NULL);
+	if ((unsigned char *)dest > (unsigned char *)src)
 	{
-		*(tmp_cpy + i) = *((unsigned char *)s_cpy + i);
-		i++;
+		i = (int)count - 1;
+		while (i >= 0)
+		{
+			*((unsigned char *)dest + i) = *((unsigned char *)src + i);
+			i--;
+		}
 	}
-	i = 0;
-	while (i < count)
+	else
 	{
-		*(d_cpy + i) = *(tmp_cpy + i);
-		i++;
+		i = 0;
+		while (i < (int)count)
+		{
+			*((unsigned char *)dest + i) = *((unsigned char *)src + i);
+			i++;
+		}
 	}
 	return (dest);
 }
@@ -48,12 +50,12 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 // 	char	*dest;
 
 // 	dest = "dest";
-// 	memmove(&src1[0], &src1[5], 5);
+// 	memmove(&src1[5], &src1[0], 5);
 // 	printf("%s\n", src1);
 // 	memmove(src2, dest, strlen(dest));
 // 	printf("%s\n", src2);
 
-// 	ft_memmove(&src1_[0], &src1_[5], 5);
+// 	ft_memmove(&src1_[5], &src1_[0], 5);
 // 	printf("%s\n", src1_);
 // 	ft_memmove(src2_, dest, strlen(dest));
 // 	printf("%s\n", src2_);
