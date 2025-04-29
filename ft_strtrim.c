@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabe < moabe@student.42tokyo.jp>          +#+  +:+       +#+        */
+/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 09:14:14 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/29 09:14:14 by moabe            ###   ########.fr       */
+/*   Created: 2025/04/29 16:49:32 by moabe             #+#    #+#             */
+/*   Updated: 2025/04/29 16:49:32 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strtrim(char const *s1, char const *set) {
-    int strlength, i;
 
-    if (!s1 || !set)
-        return (NULL);
-    
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int strlength, i;
 
-    
+	if (!s1 || !set)
+		return (NULL);
 }

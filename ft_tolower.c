@@ -3,23 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabe < moabe@student.42tokyo.jp>          +#+  +:+       +#+        */
+/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 08:30:36 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/28 08:30:36 by moabe            ###   ########.fr       */
+/*   Created: 2025/04/29 16:52:16 by moabe             #+#    #+#             */
+/*   Updated: 2025/04/29 16:52:16 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <ctype.h>
 #include <stdio.h>
 
-int ft_tolower(int c) {
-    if (c >= 65 && 90 >= c) {
-        c += ('a' - 'A');
-    }
-    return (c);
-}
 
+int	ft_tolower(int c)
+{
+	if (c >= 65 && 90 >= c)
+	{
+		c += ('a' - 'A');
+	}
+	return (c);
+}
 
 // int main(void)
 // {
@@ -30,5 +33,5 @@ int ft_tolower(int c) {
 // 	printf("Aを大文字に変換→%c\n",c);
 //     d = ft_tolower('n');
 //     printf("自作関数：Lを大文字に変換→%c\n",d);
-// 	return 0;
+// 	return (0);
 // }

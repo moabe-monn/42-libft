@@ -6,15 +6,19 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 14:35:04 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/27 15:03:34 by moabe            ###   ########.fr       */
+/*   Updated: 2025/04/29 16:39:38 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c) {
-	if (33 <= c && c <= 126) {
-		return 16384;
-	} else {
-		return 0;
+int	ft_isprint(int c)
+{
+	if (33 <= c && c <= 126)
+	{
+		return (16384);
+	}
+	else
+	{
+		return (0);
 	}
 }
 
