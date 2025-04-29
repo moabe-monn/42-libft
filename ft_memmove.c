@@ -6,26 +6,26 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:16:00 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/27 18:16:28 by moabe            ###   ########.fr       */
+/*   Updated: 2025/04/29 18:04:31 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t count)
 {
 	unsigned char		*d_cpy;
 	const unsigned char	*s_cpy;
-	unsigned char		*tmp_cpy[count]; //直す
+	unsigned char		*tmp_cpy;
 	size_t				i;
 
 	d_cpy = (unsigned char *)dest;
 	s_cpy = (const unsigned char *)src;
+	tmp_cpy = (unsigned char *)ft_bzero((void *)tmp_cpy, count);
 	i = 0;
 	while (i < count)
 	{
-		*(tmp_cpy + i) = *(s_cpy + i);
+		*(tmp_cpy + i) = *((unsigned char *)s_cpy + i);
 		i++;
 	}
 	i = 0;
