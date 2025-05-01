@@ -6,11 +6,11 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 16:00:18 by moabe             #+#    #+#             */
-/*   Updated: 2025/02/11 10:33:19 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:53:48 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

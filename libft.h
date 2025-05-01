@@ -6,7 +6,7 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:52:42 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/29 18:51:29 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:54:35 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <ctype.h>
 
 int				ft_atoi(char *str);
 void			ft_bzero(void *buf, size_t n);

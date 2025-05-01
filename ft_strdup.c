@@ -6,12 +6,11 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:31:30 by moabe             #+#    #+#             */
-/*   Updated: 2025/02/17 08:14:41 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:53:38 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {

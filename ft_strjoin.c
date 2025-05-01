@@ -6,12 +6,11 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:30:31 by moabe             #+#    #+#             */
-/*   Updated: 2025/02/23 17:08:22 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:53:43 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	str_len(char *str)
 {

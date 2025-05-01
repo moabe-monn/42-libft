@@ -6,11 +6,11 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 08:26:44 by moabe             #+#    #+#             */
-/*   Updated: 2025/02/08 08:33:32 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:53:55 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

@@ -6,12 +6,11 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:19:26 by moabe             #+#    #+#             */
-/*   Updated: 2025/02/20 12:02:16 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:53:30 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	find_splitter(char c, char *charset)
 {

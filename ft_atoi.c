@@ -6,11 +6,11 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 07:26:07 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/27 16:20:52 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:52:28 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {

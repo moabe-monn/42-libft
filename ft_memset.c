@@ -6,13 +6,11 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 15:20:24 by moabe             #+#    #+#             */
-/*   Updated: 2025/04/27 17:02:11 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 13:53:24 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *buf, int ch, size_t n)
 {
