@@ -6,7 +6,7 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 07:26:07 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/01 13:52:28 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/01 21:05:47 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,46 @@
 
 int	ft_atoi(char *str)
 {
-	int	num;
-	int	sign;
+	unsigned long	num;
+	int				sign;
 
 	num = 0;
 	sign = 1;
-	while (*str == ' ' || *str == '\n' || *str == '\t'
-		|| *str == '\v' || *str == '\f' || *str == '\r')
-	{
+	while (*str == ' ')
 		str++;
-	}
-	while (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-		{
-			sign = sign * (-1);
-		}
-		str++;
-	}
+	if (*str == '-' || *str == '+')
+		sign = 1 - ((*str++ == '-') << 1);
 	while (*str >= '0' && *str <= '9')
 	{
-		num = num * 10 + (*str - '0');
-		str++;
+		if (sign == 1 && (num > 922337203685477580ul
+				|| (num == 922337203685477580ul && (*str - '0') > 7)))
+			return (-1);
+		else if (sign == -1 && (num > 922337203685477580ul
+				|| (num == 922337203685477580ul && (*str - '0') > 8)))
+			return (0);
+		num = num * 10 + (*str++ - '0');
 	}
-	num = num * sign;
-	return (num);
+	return (num * sign);
 }
 
-// int	main(void)
-// {
-// 	int test = ft_atoi("");
-// 	printf("%d\n",test);
-// 	int test2 = ft_atoi("      090910");
-// 	printf("%d\n",test2);
-// 	int test3 = ft_atoi("--10");
-// 	printf("%d\n",test3);
-// 	int test4 = ft_atoi("    ---+--+1234ab567");
-// 	printf("%d\n",test4);
-// 	int test5 = ft_atoi("ff");
-// 	printf("%d\n",test5);
-// }
+int	main(void)
+{
+	int	test;
+	int	test2;
+	int	test3;
+	int	test4;
+	int	test5;
+
+	test = ft_atoi("");
+	printf("%d\n", test);
+	test2 = ft_atoi("      090910");
+	printf("%d\n", test2);
+	test3 = ft_atoi("--10");
+	printf("%d\n", test3);
+	test4 = ft_atoi("    -1234ab567");
+	printf("%d\n", test4);
+	test5 = ft_atoi("ff");
+	printf("%d\n", test5);
+	printf("%d\n", atoi("-9223372036854775809"));
+	printf("%d\n", ft_atoi("-9223372036854775809"));
+}
