@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (start > ft_strlen(s))
 	{
-		p = ft_calloc(); //ここわからない
+		p = ft_calloc(1, sizeof(char)); //ここ説明できるように
 		if (!p)
 			return (NULL);
 		return (p);
