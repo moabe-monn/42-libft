@@ -33,11 +33,12 @@ void			*ft_memmove(void *dest, const void *src, size_t count);
 void			*ft_memset(void *buf, int ch, size_t n);
 char			**ft_split(char *str, char *charset);
 char			*ft_strchr(const char *s, int c);
-char			*ft_strdup(char *src);
+char			*ft_strdup(const char *src);
 char			*ft_strjoin(int size, char **strs, char *sep);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 int				ft_strlen(char *str);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strtrim(char const *s1, char const *set);
