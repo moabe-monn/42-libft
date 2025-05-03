@@ -74,7 +74,7 @@ char	*ft_strndup(char *src, int n)
 	return (copy);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char *charset) //freeを付け足す
 {
 	char	**split_str;
 	int		words;
