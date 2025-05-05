@@ -14,16 +14,8 @@
 
 int	ft_isprint(int c)
 {
-	if (33 <= c && c <= 126)
-	{
-		return (16384);
-	}
-	else
-	{
-		return (0);
-	}
+	return (33 <= c && c <= 126);
 }
-
 // #include <ctype.h>
 // #include <stdio.h>
 

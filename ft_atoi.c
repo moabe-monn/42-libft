@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: moabe < moabe@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 07:26:07 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/01 21:05:47 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/02 08:42:33 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ int	ft_atoi(char *str)
 
 	num = 0;
 	sign = 1;
-	while (*str == ' ')
+	while (*str == ' ') 
 		str++;
 	if (*str == '-' || *str == '+')
 		sign = 1 - ((*str++ == '-') << 1);
 	while (*str >= '0' && *str <= '9')
 	{
-		if (sign == 1 && (num > 922337203685477580ul
-				|| (num == 922337203685477580ul && (*str - '0') > 7)))
-			return (-1);
-		else if (sign == -1 && (num > 922337203685477580ul
-				|| (num == 922337203685477580ul && (*str - '0') > 8)))
-			return (0);
+		// if (sign == 1 && (num > 922337203685477580ul
+		// 		|| (num == 922337203685477580ul && (*str - '0') > 7))) //LONG_MAX,LONG_MINの扱いの実装
+		// 	return (-1);
+		// else if (sign == -1 && (num > 922337203685477580ul
+		// 		|| (num == 922337203685477580ul && (*str - '0') > 8)))
+		// 	return (0);
 		num = num * 10 + (*str++ - '0');
 	}
 	return (num * sign);

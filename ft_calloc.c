@@ -12,20 +12,6 @@
 
 #include "libft.h"
 
-// void	ft_bzero(void *buf, size_t n)
-// {
-// 	unsigned char	*p;
-// 	size_t			i;
-
-// 	p = buf;
-// 	i = 0;
-// 	while (i < n)
-// 	{
-// 		*(p + i) = '\0';
-// 		i++;
-// 	}
-// }
-
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
