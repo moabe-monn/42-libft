@@ -15,11 +15,12 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	const char *sub_start;
-	char *p;
-	size_t i;
+	const char	*sub_start;
+	char		*p;
+	size_t		i;
+	size_t		strlength;
 
-	if (start > ft_strlen(s))
+	if (start >= ft_strlen(s))
 	{
 		p = ft_calloc(1, sizeof(char)); //ここ説明できるように
 		if (!p)
