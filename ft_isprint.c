@@ -14,7 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	return (33 <= c && c <= 126);
+	return (32 <= c && c <= 126);
 }
 // #include <ctype.h>
 // #include <stdio.h>
