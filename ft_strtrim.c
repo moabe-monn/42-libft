@@ -12,43 +12,22 @@
 
 #include "libft.h"
 
-int	check_contain(char s, char const *set)
-{
-	int		j;
-
-	j = 0;
-	while (set[j])
-	{
-		if (s == set[j])
-			return (0);
-		j++;
-	}
-	return (1);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*p;
-	int		i;
-	int		j;
+	size_t	i;
 
-	i = 0;
-	j = 0;
-	p = (char *)ft_calloc(ft_strlen((char *)s1) + 1, sizeof(char));
 	if (!s1 || !set)
 		return (NULL);
-	while (s1[i])
-	{
-		if (check_contain(s1[i], set) == 1)
-		{
-			p[j] = s1[i];
-			j++;
-		}
-		i++;
-	}
-	return (p);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
 
+
+// #include <stdio.h>
 
 // int main(void)
 // {
