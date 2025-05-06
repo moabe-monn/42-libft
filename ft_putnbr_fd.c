@@ -10,7 +10,7 @@ void ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		number *= -1;
 	}
-	if (number > 10)
+	if (number >= 10)
 	{
 		ft_putnbr_fd(number / 10, fd);
 	}
