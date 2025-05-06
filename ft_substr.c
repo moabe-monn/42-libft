@@ -15,7 +15,6 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	const char	*sub_start;
 	char		*p;
 	size_t		i;
 	size_t		strlength;
@@ -27,8 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			return (NULL);
 		return (p);
 	}
-	sub_start = s + start;
-	strlength = ft_strlen(sub_start);
+	strlength = ft_strlen(s + start);
 	i = 0;
 	if (len < strlength)
 		strlength = len;
@@ -37,7 +35,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (strlength > i)
 	{
-		*(p + i) = *(sub_start + i);
+		*(p + i) = *(s + start + i);
 		i++;
 	}
 	return (p);
