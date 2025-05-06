@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-int	word_length(char *str, char splitword)
+int	word_length(char const *str, char c)
 {
 	int	len;
 
 	len = 0;
-	while (str[len] && str[len] != splitword)
+	while (str[len] && str[len] != c)
 		len++;
 	return (len);
 }
 
-int	count_words(char *str, char splitword)
+int	count_words(char const *str, char c)
 {
 	int	count;
 	int	in_word;
@@ -31,7 +31,7 @@ int	count_words(char *str, char splitword)
 	in_word = 0;
 	while (*str)
 	{
-		if (*str != splitword)
+		if (*str == c)
 			in_word = 0;
 		else if (!in_word)
 		{
@@ -43,7 +43,7 @@ int	count_words(char *str, char splitword)
 	return (count);
 }
 
-char	*ft_strndup(char *src, int n)
+char	*ft_strndup(char const *src, int n)
 {
 	int		i;
 	char	*copy;
@@ -63,29 +63,29 @@ char	*ft_strndup(char *src, int n)
 	return (copy);
 }
 
-char	**ft_split(char *str, char splitword) //freeを付け足す
+char	**ft_split(char const *s, char c) //freeを付け足す
 {
 	char	**split_str;
 	int		words;
 	int		i;
 
 	i = 0;
-	words = count_words(str, splitword);
+	words = count_words(s, c);
 	split_str = (char **)malloc(sizeof(char *) * (words + 1));
 	if (split_str == NULL)
 		return (NULL);
-	while (*str)
+	while (*s)
 	{
-		if (*str != splitword)
+		if (*s != c)
 		{
-			split_str[i] = ft_strndup(str, word_length(str, splitword));
+			split_str[i] = ft_strndup(s, word_length(s, c));
 			if (!split_str[i])
 				return (NULL);
-			str += word_length(str, splitword);
+			s += word_length(s, c);
 			i++;
 		}
 		else
-			str++;
+			s++;
 	}
 	split_str[i] = NULL;
 	return (split_str);
