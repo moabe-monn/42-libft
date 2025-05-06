@@ -14,25 +14,31 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	while (*s)
+	char			*last;
+	unsigned char	target;
+	int				i;
+
+	last = (char *)s;
+	target = (unsigned char)c;
+	i = ft_strlen(s);
+	while (i > 0)
 	{
-		s++;
-	}
-	s--;
-	while (*s)
-	{
-		if (*s == c)
+		if (last[i] == target)
 		{
-			return ((char *)s);
+			return (last + i);
 		}
-		s--;
+		i--;
 	}
-	if (c == '\0')
+	if (last[i] == target)
 	{
-		return ((char *)s);
+		return (last + i);
 	}
 	return (NULL);
 }
+
+
+// #include <stdio.h>
+// #include <string.h>
 
 // int main(void)
 // {
