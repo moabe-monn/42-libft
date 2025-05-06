@@ -12,102 +12,53 @@
 
 #include "libft.h"
 
-int	str_len(char *str)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char		*str;
+	int			total_len;
+	size_t		i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-size_t	calculate_len(int size, char **strs, char *sep)
-{
-	size_t	sep_len;
-	size_t	len;
-	int		i;
-
-	sep_len = str_len(sep);
-	i = 0;
-	len = 0;
-	while (i < size)
-	{
-		len += str_len(strs[i]);
-		if (i < size - 1)
-			len += sep_len;
-		i++;
-	}
-	return (len);
-}
-
-char	*copy_str(int size, char *str, char *sep, char **strs)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	j = 0;
-	while (j < size)
-	{
-		k = 0;
-		while (strs[j][k] != '\0')
-		{
-			str[i++] = strs[j][k++];
-		}
-		if (j < size - 1)
-		{
-			k = 0;
-			while (sep[k] != '\0')
-			{
-				str[i++] = sep[k++];
-			}
-		}
-		j++;
-	}
-	return (str);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	char	*str;
-	int		total_len;
-
-	if (size == 0)
-	{
-		str = (char *)malloc(sizeof(char));
-		str[0] = '\0';
-		return (str);
-	}
-	total_len = calculate_len(size, strs, sep);
-	str = (char *)malloc(sizeof(char) * (total_len + 1));
+	if (!s1 || !s2)
+		return (NULL);
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)ft_calloc(sizeof(*str),total_len + 1);
 	if (!str)
 		return (NULL);
-	copy_str(size, str, sep, strs);
-	str[total_len] = '\0';
+	i = 0;
+	while (*s1)
+		str[i++] = *s1++;
+	while (*s2)
+		str[i++] = *s2++;
 	return (str);
 }
 
-// int main()
+
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
+
+// void test_ft_strjoin(const char *s1, const char *s2, const char *expected)
 // {
-// 	char *words[] = {"Hello", "World", "42", "Tokyo"};
-// 	char *sep = ", ";
-// 	char *result = ft_strjoin(4, words, sep);
-
-// 	if (result)
-// 	{
-// 		printf("Result: \"%s\"\n", result);
-// 		free(result);
-// 	}
-
-// 	// サイズが0の場合のテスト
-// 	char *empty_result = ft_strjoin(0, words, sep);
-// 	if (empty_result)
-// 	{
-// 		printf("Empty Result: \"%s\"\n", empty_result);
-// 		free(empty_result);
-// 	}
-
-// 	return 0;
+//     char *result = ft_strjoin(s1, s2);
+//     if (result == NULL && expected == NULL)
+//         printf("✅ Passed: NULL inputs handled\n");
+//     else if (result && expected && strcmp(result, expected) == 0)
+//         printf("✅ Passed: \"%s\" + \"%s\" => \"%s\"\n", s1, s2, result);
+//     else
+//         printf("❌ Failed: \"%s\" + \"%s\" => \"%s\" (Expected: \"%s\")\n",
+//                s1, s2, result ? result : "NULL", expected ? expected : "NULL");
+//     free(result);
 // }
+
+// int main(void)
+// {
+//     test_ft_strjoin("Hello", "World", "HelloWorld");
+//     test_ft_strjoin("", "Test", "Test");
+//     test_ft_strjoin("Test", "", "Test");
+//     test_ft_strjoin("", "", "");
+//     test_ft_strjoin(NULL, "Test", NULL);
+//     test_ft_strjoin("Test", NULL, NULL);
+//     test_ft_strjoin(NULL, NULL, NULL);
+//     return 0;
+// }
+
