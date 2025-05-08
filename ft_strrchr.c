@@ -36,7 +36,6 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-
 // #include <stdio.h>
 // #include <string.h>
 

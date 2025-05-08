@@ -6,13 +6,13 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:09:45 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/08 15:09:48 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/08 15:12:23 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

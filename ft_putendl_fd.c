@@ -6,24 +6,23 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:09:52 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/08 15:09:53 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/08 16:34:25 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	if (s != NULL)
 	{
 		ft_putstr_fd(s, fd);
-		ft_putchar_fd('\n',fd);
+		ft_putchar_fd('\n', fd);
 	}
 }
 
 // #include <fcntl.h>
 // #include <stdio.h>
-
 
 // int main(void)
 // {

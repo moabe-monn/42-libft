@@ -3,40 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabe < moabe@student.42tokyo.jp>          +#+  +:+       +#+        */
+/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 07:26:07 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/02 08:42:33 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/08 16:33:43 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+
+static	int	long_edge(long num, int sign, int next_digit)
+{
+	if (sign == 1 && (10 * num + next_digit) * sign > LONG_MAX)
+		return (-1);
+	else if (sign == -1 && (10 * num + next_digit) * sign < LONG_MIN)
+		return (0);
+	else
+		return (1);
+}
 
 int	ft_atoi(const char *nptr)
 {
-	unsigned long	num;
-	int				sign;
+	long		num;
+	int			sign;
 
 	num = 0;
 	sign = 1;
 	while (*nptr == ' ' || *nptr == '\n' || *nptr == '\t'
-		|| *nptr == '\v' || *nptr == '\f' || *nptr == '\r') 
+		|| *nptr == '\v' || *nptr == '\f' || *nptr == '\r')
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 		sign = 1 - ((*nptr++ == '-') << 1);
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		// if (sign == 1 && (num > 922337203685477580ul
-		// 		|| (num == 922337203685477580ul && (*str - '0') > 7))) //LONG_MAX,LONG_MINの扱いの実装
-		// 	return (-1);
-		// else if (sign == -1 && (num > 922337203685477580ul
-		// 		|| (num == 922337203685477580ul && (*str - '0') > 8)))
-		// 	return (0);
+		if (long_edge(num, sign, *nptr) != 1)
+			return (long_edge(num, sign, *nptr));
 		num = num * 10 + (*nptr++ - '0');
 	}
 	return (num * sign);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	int	test;

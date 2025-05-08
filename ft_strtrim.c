@@ -26,7 +26,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr(s1, 0, i + 1));
 }
 
-
 // #include <stdio.h>
 
 // int main(void)

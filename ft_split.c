@@ -6,7 +6,7 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:19:26 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/01 13:53:30 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/08 15:58:05 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,20 @@ static char	*ft_strndup(char const *src, int n)
 	return (copy);
 }
 
-char	**ft_split(char const *s, char c) //freeを付け足す
+static	void	ft_free(char **split_str, int i)
+{
+	while (i >= 0 && split_str[--i])
+		free(split_str[i]);
+	free(split_str);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**split_str;
-	int		words;
 	int		i;
 
 	i = 0;
-	words = count_words(s, c);
-	split_str = (char **)malloc(sizeof(char *) * (words + 1));
+	split_str = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (split_str == NULL)
 		return (NULL);
 	while (*s)
@@ -80,7 +85,10 @@ char	**ft_split(char const *s, char c) //freeを付け足す
 		{
 			split_str[i] = ft_strndup(s, word_length(s, c));
 			if (!split_str[i])
+			{
+				ft_free(split_str, i);
 				return (NULL);
+			}
 			s += word_length(s, c);
 			i++;
 		}

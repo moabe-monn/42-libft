@@ -28,7 +28,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (p);
 }
 
-
 // int is_zero_initialized(void* ptr, size_t total_size) {
 //     unsigned char* p = (unsigned char*)ptr;
 //     for (size_t i = 0; i < total_size; i++) {
@@ -53,7 +52,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 //         free(ptr);
 //         return 1;
 //     }
-//     printf("Test 1 and 2 Passed: Valid allocation and zero-initialization\n");
+//     printf("Test 1 and 2 Passed: Valid allocation and zero-initialized\n");
 //     free(ptr);
 
 //     // オーバーフローチェックテスト

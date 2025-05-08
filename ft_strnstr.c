@@ -6,7 +6,7 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 13:20:34 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/01 13:49:36 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/08 16:38:22 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		if (str[i] == to_find[0])
 		{
 			j = 1;
-			while (to_find[j] && str[i + j] == to_find[j] && (size_t)(i + j) < len)
+			while (to_find[j] && str[i + j] == to_find[j]
+				&& (size_t)(i + j) < len)
 				j++;
 			if (to_find[j] == '\0')
 				return ((char *)&str[i]);
@@ -34,7 +35,6 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (NULL);
 }
-
 
 // int main(void)
 // {
@@ -55,7 +55,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 //     // テスト2: 部分文字列が見つからないケース
 //     result = ft_strnstr(haystack, needle2, strlen(haystack));
 //     if (result)
-//         printf("Test 2 failed: Unexpectedly found '%s' in '%s'\n", needle2, result);
+//         printf("Test 2 failed: Unexpectedly found '%s'
+// 				in '%s'\n", needle2, result);
 //     else
 //         printf("Test 2 passed: '%s' not found\n", needle2);
 
@@ -71,7 +72,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 //     if (result)
 //         printf("Test 4 failed: Found 'this' in restricted range\n");
 //     else
-//         printf("Test 4 passed: 'this' not found within first 5 characters\n");
+//         printf("Test 4 passed: 'this' not
+// 				found within first 5 characters\n");
 
 //     return 0;
 // }
