@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/08 15:10:05 by moabe             #+#    #+#             */
+/*   Updated: 2025/05/08 15:10:06 by moabe            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 void ft_putstr_fd(char *s, int fd)
 {
@@ -14,8 +26,8 @@ void ft_putstr_fd(char *s, int fd)
 	}
 }
 
-// #include <fcntl.h>    
-// #include <stdio.h>    
+// #include <fcntl.h>
+// #include <stdio.h>
 
 
 // int main(void)

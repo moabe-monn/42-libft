@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/08 15:09:59 by moabe             #+#    #+#             */
+/*   Updated: 2025/05/08 15:10:00 by moabe            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void ft_putnbr_fd(int n, int fd)
@@ -17,8 +29,8 @@ void ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd("0123456789"[number % 10], fd);
 }
 
-// #include <fcntl.h>    
-// #include <stdio.h>   
+// #include <fcntl.h>
+// #include <stdio.h>
 
 
 // int main(void)
