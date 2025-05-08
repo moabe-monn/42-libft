@@ -6,18 +6,19 @@
 /*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 07:26:07 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/08 16:33:43 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/08 17:11:24 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-static	int	long_edge(long num, int sign, int next_digit)
+static	int	long_edge(long num, int next_digit)
 {
-	if (sign == 1 && (10 * num + next_digit) * sign > LONG_MAX)
+	if ((LONG_MAX / 10 < num) || (LONG_MAX / 10 == num && 7 < next_digit))
 		return (-1);
-	else if (sign == -1 && (10 * num + next_digit) * sign < LONG_MIN)
+	else if ((LONG_MIN / 10 > num)
+		|| (LONG_MIN / 10 == num && 8 < next_digit))
 		return (0);
 	else
 		return (1);
@@ -37,8 +38,8 @@ int	ft_atoi(const char *nptr)
 		sign = 1 - ((*nptr++ == '-') << 1);
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		if (long_edge(num, sign, *nptr) != 1)
-			return (long_edge(num, sign, *nptr));
+		if (long_edge(num, *nptr - '0') != 1)
+			return (long_edge(num * sign, *nptr - '0'));
 		num = num * 10 + (*nptr++ - '0');
 	}
 	return (num * sign);
@@ -63,6 +64,6 @@ int	ft_atoi(const char *nptr)
 // 	printf("%d\n", test4);
 // 	test5 = ft_atoi("ff");
 // 	printf("%d\n", test5);
-// 	printf("%d\n", atoi("-9223372036854775809"));
-// 	printf("%d\n", ft_atoi("-9223372036854775809"));
+// 	printf("%d\n", atoi("-92233720368547760909"));
+// 	printf("%d\n", ft_atoi("-9223372036854776000"));
 // }
