@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabe <moabe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: moabe < moabe@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:31:30 by moabe             #+#    #+#             */
-/*   Updated: 2025/05/01 13:53:38 by moabe            ###   ########.fr       */
+/*   Updated: 2025/05/23 12:55:12 by moabe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,3 @@ char	*ft_strdup(const char *src)
 	copy[i] = '\0';
 	return (copy);
 }
-
-// int main()
-// {
-//     char original[] = "Hello, World!";
-//     char *copy = ft_strdup(original);
-
-//     if (copy == NULL) {
-//         printf("strdup failed\n");
-//         return (1); //異常終了
-//     }
-
-//     printf("Original: %s\n", original);
-//     printf("Copy: %s\n", copy);
-
-//     // 動的に確保したメモリを解放
-//     free(copy);
-
-//     return (0);
-// }
